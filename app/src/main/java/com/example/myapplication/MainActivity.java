@@ -25,6 +25,7 @@ double all=0;
         Reslt = findViewById(R.id.seen);
          seenall =findViewById(R.id.seenall);
         Button b1 = findViewById(R.id.button1);
+
         Button b2 = findViewById(R.id.button2);
         Button b3 = findViewById(R.id.button3);
         Button b4 = findViewById(R.id.button4);
@@ -33,7 +34,7 @@ double all=0;
         Button b7 = findViewById(R.id.button7);
         Button b8 = findViewById(R.id.button8);
         Button b9 = findViewById(R.id.button9);
-        ImageButton b_pls = findViewById(R.id.buttonpls);
+        ImageButton b_pls = findViewById(R.id.buttonpls);ImageButton delete = findViewById(R.id.delete);
         ImageButton b_minus = findViewById(R.id.buttonminus);
         ImageButton b_hit = findViewById(R.id.buttonhit);
         ImageButton b_fseam = findViewById(R.id.buttondestiny);
@@ -69,6 +70,18 @@ double all=0;
                    }else if(s%2==1) {ss.setBackgroundResource(R.color.zon); Reslt.setTextColor(getColor(R.color.black));
                        Reslt.setHintTextColor(getColor(R.color.zon));
                    }
+
+
+                }
+            });
+            delete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (!(Reslt.length() == 0)) {
+                        String a =String.valueOf(Reslt.getText());
+                        a=a.substring(0,a.length()-1);
+                        Reslt.setText(a);
+                    }
 
 
                 }
@@ -172,31 +185,31 @@ double all=0;
     }
    @SuppressLint("SetTextI18n")
    public void oidopre (String news) {
+                if (!(Reslt.length() ==0)) {
+                    seenall.setText(String.valueOf(seenall.getText().toString() + Reslt.getText().toString() + news));
+                    switch (oper) {
+                        case "":
+                            all = Double.parseDouble(Reslt.getText().toString());
+                            break;
+                        case "+":
+                            all += Double.parseDouble(Reslt.getText().toString());
+                            break;
+                        case "-":
+                            all -= Double.parseDouble(Reslt.getText().toString());
+                            break;
+                        case "/":
+                            all /= Double.parseDouble(Reslt.getText().toString());
+                            break;
+                        case "*":
+                            all *= Double.parseDouble(Reslt.getText().toString());
+                            break;
 
-            seenall.setText(String.valueOf(seenall.getText().toString()+Reslt.getText().toString()+news));
-        switch (oper){
-            case "" :
-                all=Double.parseDouble(Reslt.getText().toString());
-                break;
-            case "+" :
-                all+=Double.parseDouble(Reslt.getText().toString());
-                break;
-            case "-" :
-                all-=Double.parseDouble(Reslt.getText().toString());
-                break;
-            case "/" :
-                all/=Double.parseDouble(Reslt.getText().toString());
-                break;
-            case "*" :
-                all*=Double.parseDouble(Reslt.getText().toString());
-                break;
+                    }
+                    oper = news;
+                    Reslt.setHint(all + "");
+                    Reslt.setText("");
 
-        }
-       oper=news;
-        Reslt.setHint(all+"");
-       Reslt.setText("");
-
-
+                }
 
 
 

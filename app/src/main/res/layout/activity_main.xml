@@ -9,9 +9,22 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/ee"
+        android:text="الة حاسبة"
+        android:textColor="@color/black"
+        android:textSize="45sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/seen"
         android:layout_width="0dp"
         android:layout_height="60dp"
+        android:layout_marginEnd="5dp"
         android:gravity="right|center"
         android:text=""
         android:textColor="@color/black"
@@ -24,6 +37,7 @@
         android:id="@+id/seenall"
         android:layout_width="0dp"
         android:layout_height="40dp"
+        android:layout_marginEnd="5dp"
         android:gravity="right|center"
         android:text=""
         android:textColor="@color/black"
@@ -39,11 +53,12 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.5" />
 
+
     <ImageButton
         android:id="@+id/buttonhit"
         android:layout_width="85dp"
         android:layout_height="85dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="10dp"
         android:background="@drawable/shape_co10"
         android:backgroundTint="#7690FF"
         android:src="@drawable/close"
@@ -51,11 +66,10 @@
         android:textColor="@color/white"
         android:textSize="50sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline5"
 
-        />
-
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintStart_toEndOf="@+id/buttondelete"
+        app:layout_constraintTop_toTopOf="@+id/guideline5" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline5"
@@ -69,27 +83,28 @@
         android:id="@+id/buttonminus"
         android:layout_width="85dp"
         android:layout_height="85dp"
-        android:layout_marginStart="8dp"
         android:background="@drawable/shape_co10"
         android:backgroundTint="#7690FF"
         android:src="@drawable/minus"
         android:textColor="@color/white"
         android:textSize="60sp"
-        app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toTopOf="@+id/guideline5" />
+        app:layout_constraintEnd_toEndOf="@+id/Remainder"
+        app:layout_constraintStart_toStartOf="@+id/Remainder"
+        app:layout_constraintTop_toTopOf="@+id/button6" />
 
     <ImageButton
         android:id="@+id/Remainder"
         android:layout_width="85dp"
         android:layout_height="85dp"
-        android:layout_marginEnd="8dp"
         android:background="@drawable/shape_co10"
         android:backgroundTint="#7690FF"
         android:src="@drawable/colorpicker"
         android:textColor="@color/white"
         android:textSize="50sp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toTopOf="@+id/guideline5" />
+        app:layout_constraintBottom_toBottomOf="@+id/button9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button9"
+        app:layout_constraintTop_toTopOf="@+id/button9" />
 
     <Button
         android:id="@+id/buttondelete"
@@ -108,77 +123,72 @@
         android:id="@+id/buttondestiny"
         android:layout_width="85dp"
         android:layout_height="85dp"
-        android:layout_marginTop="15dp"
-
+        android:layout_marginStart="12dp"
         android:background="@drawable/shape_co10"
         android:backgroundTint="#7690FF"
         android:src="@drawable/division"
 
         android:textColor="@color/white"
 
-        app:layout_constraintEnd_toEndOf="@+id/buttonhit"
-        app:layout_constraintStart_toStartOf="@+id/buttonhit"
-        app:layout_constraintTop_toBottomOf="@+id/buttonhit" />
+        app:layout_constraintBottom_toBottomOf="@+id/delete"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="@+id/delete" />
 
     <ImageButton
         android:id="@+id/buttonpls"
         android:layout_width="85dp"
         android:layout_height="85dp"
-        android:layout_marginTop="15dp"
         android:background="@drawable/shape_co10"
         android:backgroundTint="#7690FF"
         android:src="@drawable/plus"
         android:text="+"
         android:textColor="@color/white"
         android:textSize="50sp"
-        app:layout_constraintEnd_toEndOf="@+id/buttondestiny"
-        app:layout_constraintStart_toStartOf="@+id/buttondestiny"
-        app:layout_constraintTop_toBottomOf="@+id/buttondestiny" />
+        app:layout_constraintEnd_toEndOf="@+id/buttonminus"
+        app:layout_constraintStart_toStartOf="@+id/buttonminus"
+        app:layout_constraintTop_toTopOf="@+id/button3" />
 
     <ImageButton
         android:id="@+id/End"
         android:layout_width="85dp"
-        android:layout_height="0dp"
+        android:layout_height="85dp"
         android:background="@drawable/shape_co10"
         android:backgroundTint="#7690FF"
 
         android:src="@drawable/equalssymbol"
         android:textColor="@color/white"
         android:textSize="50sp"
-        app:layout_constraintBottom_toBottomOf="@+id/point"
         app:layout_constraintEnd_toEndOf="@+id/buttonpls"
         app:layout_constraintStart_toStartOf="@+id/buttonpls"
-        app:layout_constraintTop_toTopOf="@+id/button3" />
+        app:layout_constraintTop_toTopOf="@+id/point" />
 
     <Button
         android:id="@+id/button9"
         android:layout_width="85dp"
         android:layout_height="85dp"
-        android:layout_marginTop="15dp"
         android:background="@drawable/shape_co10"
         android:backgroundTint="#374353"
         android:text="9"
         android:textColor="@color/white"
         android:textSize="50sp"
-        app:layout_constraintBottom_toBottomOf="@+id/buttondestiny"
-        app:layout_constraintEnd_toEndOf="@+id/buttonminus"
-        app:layout_constraintStart_toStartOf="@+id/buttonminus"
-        app:layout_constraintTop_toBottomOf="@+id/buttonminus" />
+        app:layout_constraintBottom_toTopOf="@+id/button6"
+        app:layout_constraintEnd_toEndOf="@+id/buttondestiny"
+        app:layout_constraintStart_toStartOf="@+id/buttondestiny"
+        app:layout_constraintTop_toBottomOf="@+id/buttondestiny" />
 
     <Button
         android:id="@+id/button6"
         android:layout_width="85dp"
         android:layout_height="85dp"
-        android:layout_marginTop="15dp"
         android:background="@drawable/shape_co10"
         android:backgroundTint="#374353"
         android:text="6"
         android:textColor="@color/white"
         android:textSize="50sp"
-        app:layout_constraintBottom_toBottomOf="@+id/buttonpls"
+        app:layout_constraintBottom_toBottomOf="@+id/button5"
         app:layout_constraintEnd_toEndOf="@+id/button9"
         app:layout_constraintStart_toStartOf="@+id/button9"
-        app:layout_constraintTop_toBottomOf="@+id/button9" />
+        app:layout_constraintTop_toTopOf="@+id/button5" />
 
     <Button
         android:id="@+id/button3"
@@ -215,15 +225,15 @@
         android:id="@+id/button8"
         android:layout_width="85dp"
         android:layout_height="85dp"
-        android:layout_marginTop="15dp"
         android:background="@drawable/shape_co10"
         android:backgroundTint="#374353"
         android:text="8"
         android:textColor="@color/white"
         android:textSize="50sp"
-        app:layout_constraintEnd_toEndOf="@+id/Remainder"
-        app:layout_constraintStart_toStartOf="@+id/Remainder"
-        app:layout_constraintTop_toBottomOf="@+id/Remainder" />
+        app:layout_constraintBottom_toBottomOf="@+id/button7"
+        app:layout_constraintEnd_toEndOf="@+id/buttonhit"
+        app:layout_constraintStart_toStartOf="@+id/buttonhit"
+        app:layout_constraintTop_toTopOf="@+id/button7" />
 
     <Button
         android:id="@+id/button5"
@@ -310,5 +320,20 @@
         app:layout_constraintEnd_toEndOf="@+id/button2"
         app:layout_constraintStart_toStartOf="@+id/button1"
         app:layout_constraintTop_toTopOf="@+id/point" />
+
+    <ImageButton
+        android:id="@+id/delete"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+
+        android:background="@drawable/shape_co10"
+        android:backgroundTint="#7690FF"
+        android:src="@drawable/delete"
+        android:textColor="@color/white"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="@+id/Remainder"
+        app:layout_constraintStart_toStartOf="@+id/Remainder"
+        app:layout_constraintTop_toTopOf="@+id/guideline5" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
